@@ -149,12 +149,12 @@ footer{text-align:center;padding:0 20px 46px;font-size:.88rem;color:#5b6679}
   </section>
 
   <section class="card">
-    <form id="f" action="https://formsubmit.co/4shur469@gmail.com" method="POST">
+    <form id="f" action="https://api.web3forms.com/submit" method="POST">
       <div class="fields">
-        <input type="hidden" name="_subject" value="Un mot pour John Claude — Fabrice Mbuna Tchinda">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Un mot pour John Claude — Fabrice Mbuna Tchinda">
+        <input type="hidden" name="from_name" value="Un mot pour John Claude">
+        <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="n"><span data-l="fr">Votre nom</span><span data-l="en">Your name</span></label>
         <input id="n" name="name" required autocomplete="name">
         <label for="m"><span data-l="fr">Votre petit mot ou un souvenir de Fabrice</span><span data-l="en">Your small word or a memory of Fabrice</span></label>
@@ -231,8 +231,8 @@ f.addEventListener('submit',async e=>{
   e.preventDefault();
   const btn=f.querySelector('.send');btn.disabled=true;st.className='status';st.textContent=T[lang].sending;
   try{
-    const url=f.action.replace('formsubmit.co/','formsubmit.co/ajax/');
-    const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(f.access_key.value==='YOUR_ACCESS_KEY')throw new Error('access key missing');
+    const r=await fetch(f.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
     const d=await r.json().catch(()=>({}));
     if(!r.ok||d.success==='false'||d.success===false)throw new Error(d.message||('HTTP '+r.status));
     const bird=document.getElementById('fly');bird.classList.add('go');
