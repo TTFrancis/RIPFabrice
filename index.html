@@ -234,10 +234,10 @@ f.addEventListener('submit',async e=>{
     const url=f.action.replace('formsubmit.co/','formsubmit.co/ajax/');
     const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
     const d=await r.json().catch(()=>({}));
-    if(!r.ok||d.success==='false'||d.success===false)throw 0;
+    if(!r.ok||d.success==='false'||d.success===false)throw new Error(d.message||('HTTP '+r.status));
     const bird=document.getElementById('fly');bird.classList.add('go');
     setTimeout(()=>f.classList.add('done'),900);
-  }catch(_){st.className='status err';st.textContent=T[lang].err;btn.disabled=false;}
+  }catch(e){st.className='status err';st.textContent=T[lang].err+(e&&e.message?' ['+e.message+']':'');btn.disabled=false;}
 });
 
 /* ===== Doves: a soft wingbeat and an ascending, swaying flight ===== */
