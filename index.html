@@ -29,7 +29,10 @@ h1,h2,.serif{font-family:'Fraunces',Georgia,serif;font-weight:300}
 .hero h1{font-size:clamp(2rem,6.5vw,3.6rem);line-height:1.1;letter-spacing:.01em}
 .hero .dates{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.15rem;margin-top:10px;color:var(--dawn)}
 .hero .born{font-size:.92rem;opacity:.85;margin-top:6px}
-.hero .assoc{display:inline-block;margin-top:22px;font-size:.9rem;padding:7px 18px;border:1px solid rgba(243,226,200,.55);border-radius:99px;color:var(--dawn)}
+.hero .down{display:inline-grid;place-items:center;margin-top:26px;width:68px;height:68px;border:1.5px solid rgba(243,226,200,.55);border-radius:50%;color:var(--dawn);animation:nudge 2.6s ease-in-out infinite}
+.hero .down svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.hero .down:hover{background:rgba(243,226,200,.12)}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 
 /* doves with olive branch */
 .dove{display:block;width:100%;height:auto;overflow:visible;--df:#fff;--ds:#c3cde0;filter:drop-shadow(0 0 .6px var(--ds)) drop-shadow(0 0 .6px var(--ds))}
@@ -92,7 +95,7 @@ form.done .fields{display:none}form.done .thanks{display:block}
 
 footer{text-align:center;padding:0 20px 46px;font-size:.88rem;color:#5b6679}
 [data-l]{display:none}html[lang=fr] [data-l=fr],html[lang=en] [data-l=en]{display:revert}
-@media (prefers-reduced-motion:reduce){.glow,.candle *{animation:none!important}.mote{display:none}.fly.go{animation:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.hero .down,.glow,.candle *{animation:none!important}.mote{display:none}.fly.go{animation:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -111,7 +114,7 @@ footer{text-align:center;padding:0 20px 46px;font-size:.88rem;color:#5b6679}
     <p class="dates">07 <span data-l="fr">mars</span><span data-l="en">March</span> 1984 &nbsp;—&nbsp; 21 <span data-l="fr">novembre</span><span data-l="en">November</span> 2026</p>
     <p class="born"><span data-l="fr">Né à l'hôpital départemental de Mbouda</span><span data-l="en">Born at the departmental hospital of Mbouda</span></p>
     <p class="born"><span data-l="fr">Décédé aux USA · Inhumation prévue le 19 décembre aux USA</span><span data-l="en">Passed away in the USA · Burial planned for 19 December in the USA</span></p>
-    <span class="assoc">FASOCAMER</span>
+    <a class="down" href="#mot" aria-label="Lire le message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M5.5 12.5 12 19l6.5-6.5"/></svg></a>
   </div>
 </header>
 
