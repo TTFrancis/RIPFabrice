@@ -233,7 +233,8 @@ f.addEventListener('submit',async e=>{
   try{
     const url=f.action.replace('formsubmit.co/','formsubmit.co/ajax/');
     const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
-    if(!r.ok)throw 0;
+    const d=await r.json().catch(()=>({}));
+    if(!r.ok||d.success==='false'||d.success===false)throw 0;
     const bird=document.getElementById('fly');bird.classList.add('go');
     setTimeout(()=>f.classList.add('done'),900);
   }catch(_){st.className='status err';st.textContent=T[lang].err;btn.disabled=false;}
