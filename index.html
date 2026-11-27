@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>En mémoire de Fabrice Mbuna Tchinda</title>
+<meta property="og:title" content="En mémoire de MBUNA TCHINDA Fabrice">
+<meta property="og:description" content="FASOCAMER — Un petit mot pour sa famille.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Figtree:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--night:#18233a;--dusk:#34476b;--haze:#9db0cc;--dawn:#f3e2c8;--gold:#d9a45b;--ink:#1d2535;--mist:#edf0f4}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',system-ui,sans-serif;color:var(--ink);background:var(--mist);line-height:1.65}
+h1,h2,.serif{font-family:'Fraunces',Georgia,serif;font-weight:300}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* language toggle */
+.lang{position:fixed;top:14px;right:14px;z-index:20;display:flex;background:rgba(24,35,58,.55);backdrop-filter:blur(6px);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;color:#fff;font:500 .8rem 'Figtree';padding:6px 13px;border-radius:99px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--dawn);color:var(--night)}
+
+/* hero: dusk sky to dawn horizon */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:90px 22px 80px;color:#fff;overflow:hidden;
+  background:linear-gradient(180deg,var(--night) 0%,var(--dusk) 45%,#b7a9a6 80%,var(--dawn) 100%)}
+.portrait{width:min(250px,62vw);aspect-ratio:4/5;border-radius:999px 999px 18px 18px;overflow:hidden;margin:0 auto 30px;border:3px solid rgba(243,226,200,.8);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.hero h1{font-size:clamp(2rem,6.5vw,3.6rem);line-height:1.1;letter-spacing:.01em}
+.hero .dates{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.15rem;margin-top:10px;color:var(--dawn)}
+.hero .born{font-size:.92rem;opacity:.85;margin-top:6px}
+.hero .assoc{display:inline-block;margin-top:22px;font-size:.9rem;padding:7px 18px;border:1px solid rgba(243,226,200,.55);border-radius:99px;color:var(--dawn)}
+
+/* doves with olive branch */
+.dove{display:block;width:100%;height:auto;overflow:visible;--df:#fff;--ds:#c3cde0;filter:drop-shadow(0 0 .6px var(--ds)) drop-shadow(0 0 .6px var(--ds))}
+.dove path{fill:var(--df)}
+.dove .farw path{fill:#d3dcea}
+.dove .nearw .fe{fill:#e9eff7}
+.dove path.ln{fill:none;stroke:var(--ds);stroke-width:.7;opacity:.75}
+.dove .feet path{fill:none;stroke:#d98f7f;stroke-width:1.2;stroke-linecap:round}
+.dove path.stem{fill:none;stroke:#6f8f4e;stroke-width:1.3;stroke-linecap:round}
+.dove .leafs path{fill:#7fa05a}
+.dove path.beak{fill:#d9a45b}
+.dove .eye{fill:#1d2535}
+.sky{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bird{position:absolute;left:0;top:0;width:120px;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 4px 10px rgba(10,18,36,.3));pointer-events:none}
+.glow{position:absolute;left:50%;bottom:-6%;width:130%;height:42%;translate:-50% 0;background:radial-gradient(ellipse at 50% 100%,rgba(255,226,170,.55),rgba(255,226,170,0) 70%);animation:breathe 8s ease-in-out infinite alternate}
+@keyframes breathe{from{opacity:.5;scale:.96}to{opacity:1;scale:1.04}}
+.mote{position:absolute;bottom:-10px;border-radius:50%;background:#fff3dc;opacity:0;animation:motes linear infinite}
+@keyframes motes{0%{transform:translate(0,0);opacity:0}15%{opacity:.75}100%{transform:translate(var(--mx),-105vh);opacity:0}}
+.hero h1,.hero p{text-shadow:0 1px 14px rgba(24,35,58,.5)}
+
+/* message */
+.letter{max-width:660px;margin:0 auto;padding:78px 24px 30px;text-align:center}
+.letter h2{font-size:clamp(1.5rem,4.5vw,2.1rem);margin-bottom:22px;color:var(--night)}
+.letter p{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(1.1rem,3.2vw,1.35rem);line-height:1.75;color:#2a3550}
+.mark{display:block;width:160px;margin:0 auto 26px;--df:#fff;--ds:#34476b;--fs:1.5s;animation:hov 5s ease-in-out infinite}
+@keyframes hov{50%{transform:translateY(-9px)}}
+
+/* form */
+.card{max-width:560px;margin:34px auto 90px;padding:0 24px}
+form{position:relative;background:#fff;border-radius:22px;padding:30px 26px;box-shadow:0 14px 40px rgba(24,35,58,.1)}
+label{display:block;font-weight:500;font-size:.9rem;margin:0 0 6px;color:var(--dusk)}
+input,textarea{width:100%;font:inherit;color:var(--ink);padding:12px 14px;border:1px solid #cdd5e1;border-radius:12px;background:#fafbfc;margin-bottom:18px}
+textarea{min-height:130px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(217,164,91,.25)}
+button.send{width:100%;border:0;border-radius:99px;padding:14px;font:500 1rem 'Figtree';background:var(--night);color:var(--dawn);cursor:pointer;transition:transform .2s,background .2s}
+button.send:hover{background:var(--dusk);transform:translateY(-1px)}
+button.send:disabled{opacity:.6;cursor:wait}
+.hp{position:absolute;left:-9999px}
+.status{text-align:center;margin-top:14px;font-size:.95rem;min-height:1.4em;color:var(--dusk)}
+.status.err{color:#a33a3a}
+.thanks{display:none;text-align:center;padding:26px 6px}
+.thanks h3{font:300 1.5rem 'Fraunces',serif;color:var(--night);margin-bottom:8px}
+form.done .fields{display:none}form.done .thanks{display:block}
+.fly{position:absolute;left:50%;top:50%;width:120px;margin-left:-60px;opacity:0;pointer-events:none;--df:#fff;--ds:#34476b;--fs:.45s;rotate:-60deg}
+.fly.go{animation:away 3s cubic-bezier(.35,.05,.55,1) forwards}
+@keyframes away{0%{opacity:0;transform:translate(0,0) scale(.9)}12%{opacity:1}100%{opacity:0;transform:translate(240px,-440px) scale(.45)}}
+
+footer{text-align:center;padding:0 20px 46px;font-size:.88rem;color:#5b6679}
+[data-l]{display:none}html[lang=fr] [data-l=fr],html[lang=en] [data-l=en]{display:revert}
+@media (prefers-reduced-motion:reduce){.glow,.mark{animation:none}.mote{display:none}.fly.go{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+<div class="lang" role="group" aria-label="Langue / Language">
+  <button type="button" data-set="fr" aria-pressed="true">FR</button>
+  <button type="button" data-set="en" aria-pressed="false">EN</button>
+</div>
+
+<header class="hero">
+  <div class="sky" aria-hidden="true">
+    <div class="glow"></div>
+  </div>
+  <div style="position:relative">
+    <div class="portrait"><img src="Professional%20Portrait%20by%20the%20Window.png" alt="MBUNA TCHINDA Fabrice"></div>
+    <h1>MBUNA TCHINDA Fabrice</h1>
+    <p class="dates">07 <span data-l="fr">mars</span><span data-l="en">March</span> 1984 &nbsp;—&nbsp; 21 <span data-l="fr">novembre</span><span data-l="en">November</span> 2026</p>
+    <p class="born"><span data-l="fr">Né à l'hôpital départemental de Mbouda</span><span data-l="en">Born at the departmental hospital of Mbouda</span></p>
+    <p class="born"><span data-l="fr">Décédé aux USA · Inhumation prévue le 19 décembre aux USA</span><span data-l="en">Passed away in the USA · Burial planned for 19 December in the USA</span></p>
+    <span class="assoc">FASOCAMER</span>
+  </div>
+</header>
+
+<main>
+  <section class="letter" id="mot">
+    <span class="mark" data-dove></span>
+    <h2><span data-l="fr">Monsieur John Claude,</span><span data-l="en">Mr. John Claude,</span></h2>
+    <p data-l="fr">Vous l'avez accueilli si jeune dans votre vie que vous avez grandi ensemble et partagé quelque chose d'unique. Ces années-là, personne ne peut les effacer. Un petit mot de notre part pour vous dire qu'elles comptent aussi pour nous.</p>
+    <p data-l="en">You welcomed him into your life so young that you grew up together and shared something unique. No one can erase those years. A small word from us to tell you that they matter to us too.</p>
+  </section>
+
+  <section class="card">
+    <form id="f" action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+      <div class="fields">
+        <input type="hidden" name="_subject" value="Un mot pour John Claude — Fabrice Mbuna Tchinda">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label for="n"><span data-l="fr">Votre nom</span><span data-l="en">Your name</span></label>
+        <input id="n" name="name" required autocomplete="name">
+        <label for="m"><span data-l="fr">Votre petit mot ou un souvenir de Fabrice</span><span data-l="en">Your small word or a memory of Fabrice</span></label>
+        <textarea id="m" name="message" required></textarea>
+        <button class="send" type="submit"><span data-l="fr">Envoyer un mot</span><span data-l="en">Send a word</span></button>
+        <p class="status" id="st" role="status"></p>
+      </div>
+      <div class="thanks" role="status">
+        <h3><span data-l="fr">Votre mot a pris son envol.</span><span data-l="en">Your word has taken flight.</span></h3>
+        <p><span data-l="fr">Merci. Il sera transmis à John Claude.</span><span data-l="en">Thank you. It will be passed on to John Claude.</span></p>
+      </div>
+      <span class="fly" id="fly" data-dove></span>
+    </form>
+  </section>
+</main>
+
+<footer><span data-l="fr">Avec toute notre sympathie, la famille FASOCAMER.</span><span data-l="en">With all our sympathy, the FASOCAMER family.</span></footer>
+
+<script>
+const T={fr:{sending:'Envoi…',err:'Le mot n’a pas pu partir. Réessayez dans un instant.'},en:{sending:'Sending…',err:'Your word could not be sent. Please try again in a moment.'}};
+const WI='M67 45C61 38 53 31 44 26L36 30L39 33L31 38L35 41L29 46C39 52 54 53 67 50Z';
+const WO='M47 24C39 18 29 12 17 8L20 15L11 12L18 18L10 20L22 23C29 25 36 27 42 29Z';
+const WING=c=>'<g class="'+c+'"><g class="arm"><path class="fe" d="'+WI+'"/>'
++'<path class="ln" d="M63 48C53 46 43 44 33 43"/><path class="ln" d="M59 41C51 37 44 33 37 30"/>'
++'<g class="hand"><path class="fe" d="'+WO+'"/>'
++'<path class="ln" d="M42 25C33 20 24 15 15 11"/><path class="ln" d="M38 27C31 23 24 20 17 18"/></g></g></g>';
+const LF='M0 0Q5 -4 11 -1.5Q5 3 0 0Z';
+const DOVE='<svg class="dove" viewBox="0 0 140 80" aria-hidden="true"><g class="root">'
++WING('farw')
++'<g class="feet"><path d="M51 58L48 61.5M56 58L53.5 62"/></g>'
++'<g class="tail"><path d="M33 48C23 47 13 50 5 56L11 56L7 62L15 60L12 67L21 62L27 59C32 57 37 55 42 53Z"/>'
++'<path class="ln" d="M38 51C30 52 21 55 14 59"/><path class="ln" d="M35 54C28 56 21 60 16 64"/></g>'
++'<path d="M31 51C36 45 47 41 59 40C70 39 80 40 86 35L92 33C96 33 97 38 94 41C91 46 89 50 86 54C78 63 63 65 51 62C40 60 33 56 31 51Z"/>'
++'<g class="head"><path d="M93 36C92 30 96 25 101 24C105 23 109 27 109 30.5C109 33 107 35 104 36C101 37 97 38 95 40Z"/>'
++'<circle class="eye" cx="103" cy="28.5" r="1.7"/><path class="beak" d="M107.5 29.5L115.5 32.2L107.5 34.8Z"/>'
++'<g class="branch"><path class="stem" d="M115 32Q123 30 129 21"/><g class="leafs">'
++'<path transform="translate(119 30) rotate(-64)" d="'+LF+'"/><path transform="translate(119 30) rotate(6)" d="'+LF+'"/>'
++'<path transform="translate(124 26) rotate(-86)" d="'+LF+'"/><path transform="translate(124 26) rotate(-14)" d="'+LF+'"/>'
++'<path transform="translate(128.4 21.4) rotate(-62)" d="'+LF+'"/></g></g></g>'
++WING('nearw')+'</g></svg>';
+document.querySelectorAll('[data-dove]').forEach(el=>{el.innerHTML=DOVE;el.setAttribute('aria-hidden','true')});
+let lang='fr';
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+  lang=b.dataset.set;document.documentElement.lang=lang;
+  document.querySelectorAll('.lang button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+}));
+const f=document.getElementById('f'),st=document.getElementById('st');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const btn=f.querySelector('.send');btn.disabled=true;st.className='status';st.textContent=T[lang].sending;
+  try{
+    const url=f.action.replace('formsubmit.co/','formsubmit.co/ajax/');
+    const r=await fetch(url,{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    if(!r.ok)throw 0;
+    const bird=document.getElementById('fly');bird.classList.add('go');
+    setTimeout(()=>f.classList.add('done'),900);
+  }catch(_){st.className='status err';st.textContent=T[lang].err;btn.disabled=false;}
+});
+
+/* ===== Doves: curved ascending flight + living body ===== */
+(function(){
+  const PI=Math.PI, R=(a,b)=>a+Math.random()*(b-a), cl=(v,a,b)=>Math.max(a,Math.min(b,v));
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const q=(e,s)=>e.querySelector(s);
+  const parts=e=>({root:q(e,'.root'),fa:q(e,'.farw .arm'),fh:q(e,'.farw .hand'),na:q(e,'.nearw .arm'),nh:q(e,'.nearw .hand'),
+    tail:q(e,'.tail'),head:q(e,'.head'),br:q(e,'.branch'),feet:q(e,'.feet')});
+  const state=(o)=>Object.assign({mode:'flap',modeEnd:0,auto:true,ph:R(0,6),freq:R(2.2,2.8),amp:1,seed:R(0,9),
+    angN:-34,angF:-42,relN:0,relF:0,foldN:1,foldF:1,sweep:0,bank:0,pitch:-2.5,bob:0,tail:-4,tailS:1,headA:0,hx:0,brA:0,feetA:0},o||{});
+
+  /* A real wingbeat is not a pendulum: the downstroke is quick and deep, the
+     recovery slower, and the outer wing trails and folds on the way up. */
+  const D=.34, TOP=20, BOT=-46;                 /* fraction of cycle on the downstroke; wing angles */
+  const ease=t=>.5-.5*Math.cos(PI*t);
+  const beat=u=>{u-=Math.floor(u);return u<D?TOP-(TOP-BOT)*ease(u/D):BOT+(TOP-BOT)*ease((u-D)/(1-D));};
+  const extend=u=>{u-=Math.floor(u);return u<D?ease(u/D):1-ease((u-D)/(1-D));};
+
+  /* one wingbeat cycle drives every body part, each with its own lag */
+  function step(s,now,dt){
+    if(s.auto&&now>=s.modeEnd){s.mode=s.mode==='flap'?'glide':'flap';s.modeEnd=now+(s.mode==='flap'?R(2200,3400):R(700,1600));}
+    const fl=s.mode==='flap',A=s.amp,B=-36;      /* B: wing held roughly level, the flap swings around it */
+    if(fl)s.ph+=dt*2*PI*s.freq;
+    const u=(s.ph/(2*PI))%1;
+    const w=B+(beat(u)-B)*A, wf=B+(beat(u-.13)-B)*A;
+    const T=fl?{
+      angN:w, angF:wf,
+      relN:cl(B+(beat(u-.16)-B)*A-w,-30,30),     /* hand lags the arm: the wing bends */
+      relF:cl(B+(beat(u-.22)-B)*A-wf,-30,30),
+      foldN:.74+.26*extend(u), foldF:.74+.26*extend(u-.06),   /* wing tip shortens on the upstroke */
+      sweep:1.7*Math.cos(2*PI*u),                /* wing pushes forward on the downstroke */
+      pitch:-2.5+4.2*Math.cos(2*PI*(u-.1)),      /* body rides up under each stroke */
+      bob:-3*Math.sin(2*PI*(u-.15)),
+      tail:-5*Math.cos(2*PI*(u-.05))+2,          /* tail counterbalances */
+      tailS:1.03,
+      headA:2*Math.sin(2*PI*(u-.2)),             /* head stays level, swallowing the bob */
+      hx:.7*Math.cos(2*PI*u),
+      brA:6*Math.sin(2*PI*(u-.25))+1.5*Math.sin(now/95+s.seed),
+      feetA:2*Math.sin(2*PI*(u-.5))              /* legs tucked against the belly */
+    }:{
+      angN:-34+1.2*Math.sin(now/1400+s.seed),
+      angF:-42+1.2*Math.sin(now/1400+s.seed+.5),
+      relN:-2, relF:-3, foldN:1, foldF:1, sweep:0,
+      pitch:-2.2+1.2*Math.sin(now/2100+s.seed),
+      bob:.8*Math.sin(now/1500+s.seed),
+      tail:-4+2*Math.sin(now/1300+s.seed),
+      tailS:1.08,                                /* tail fans slightly while gliding */
+      headA:1.4*Math.sin(now/1500+s.seed),
+      hx:0,
+      brA:2.4*Math.sin(now/430+s.seed)+1.4*Math.sin(now/130),
+      feetA:-2+1.5*Math.sin(now/900+s.seed)
+    };
+    for(const k in T)s[k]+=(T[k]-s[k])*(1-Math.exp(-dt*(k[0]==='a'||k[0]==='r'||k[0]==='f'?30:k==='sweep'?20:6)));
+  }
+  function pose(o,s){
+    const set=(e,v)=>e.setAttribute('transform',v),f=x=>x.toFixed(2),bank=s.bank||0;
+    set(o.root,`translate(0 ${f(s.bob)}) rotate(${f(s.pitch)} 60 48)`);
+    /* far wing sits behind the body, a little smaller and higher; a bank lifts
+       one wing and drops the other, as when the bird leans into a turn */
+    set(o.fa,`translate(${f(s.sweep*.6)} -1.5) translate(65 44) scale(.95) translate(-65 -44) rotate(${f(s.angF+bank*20)} 65 44)`);
+    set(o.fh,`translate(44 26) scale(${f(s.foldF)} 1) translate(-44 -26) rotate(${f(s.relF)} 44 26)`);
+    set(o.na,`translate(${f(s.sweep)} 0) rotate(${f(s.angN-bank*20)} 65 44)`);
+    set(o.nh,`translate(44 26) scale(${f(s.foldN)} 1) translate(-44 -26) rotate(${f(s.relN)} 44 26)`);
+    set(o.tail,`translate(35 52) rotate(${f(s.tail)}) scale(1 ${s.tailS.toFixed(3)}) translate(-35 -52)`);
+    set(o.head,`translate(${f(s.hx)} 0) rotate(${f(s.headA)} 90 38)`);
+    set(o.br,`rotate(${f(s.brA)} 115 32)`);set(o.feet,`rotate(${f(s.feetA)} 53 60)`);
+  }
+  const settle=s=>{s.mode='glide';s.auto=false;for(let i=0;i<60;i++)step(s,1e4,.05);};
+
+  /* the hovering dove above the message and the one that leaves with each sent word */
+  const free=[];
+  document.querySelectorAll('.mark,.fly').forEach(e=>{
+    const o=parts(e),s=state(e.classList.contains('fly')?{freq:3.4,auto:false}:{freq:2.3,amp:.9,auto:false});
+    if(reduce){settle(s);pose(o,s);}else free.push({o,s});
+  });
+
+  const sky=document.querySelector('.sky'); if(!sky)return;
+  const mk=()=>{const el=document.createElement('span');el.className='bird';el.innerHTML=DOVE;sky.appendChild(el);return{el,o:parts(el)}};
+
+  if(reduce){
+    [[.15,.18,.9],[.7,.3,.65],[.42,.1,.75]].forEach(([x,y,sc])=>{
+      const b=mk(),s=state(),W=sky.clientWidth,H=sky.clientHeight;settle(s);pose(b.o,s);
+      b.el.style.opacity=.95;b.el.style.transform=`translate(${x*W-60}px,${y*H-34}px) rotate(-30deg) scale(${sc})`;
+    });return;
+  }
+
+  for(let i=0;i<16;i++){
+    const m=document.createElement('i'),s=R(2,5);m.className='mote';
+    m.style.cssText=`left:${R(0,100)}%;width:${s}px;height:${s}px;--mx:${R(-20,70)}px;animation-duration:${R(14,28)}s;animation-delay:${-R(0,24)}s`;
+    sky.appendChild(m);
+  }
+
+  const bez=(p,t)=>{const u=1-t;return[0,1].map(k=>u*u*u*p[0][k]+3*u*u*t*p[1][k]+3*u*t*t*p[2][k]+t*t*t*p[3][k])};
+  const dbz=(p,t)=>{const u=1-t;return[0,1].map(k=>3*u*u*(p[1][k]-p[0][k])+6*u*t*(p[2][k]-p[1][k])+3*t*t*(p[3][k]-p[2][k]))};
+  let birds=[];
+
+  function flock(delayMs){
+    const W=sky.clientWidth,H=sky.clientHeight,now=performance.now();
+    const dir=Math.random()<.72?1:-1,n=Math.random()<.4?1:(Math.random()<.6?2:3);
+    const rise=H+240,run=Math.min(rise*Math.tan(R(36,54)*PI/180),W*1.2),wig=R(.04,.09)*W*(Math.random()<.5?-1:1);
+    const sx0=dir>0?R(-.12,.4)*W:R(.6,1.12)*W,base=R(.8,1.1),dur=R(15,21)*1000;
+    const ph=R(0,6),freq=R(2.2,2.8);          /* birds in a flock beat their wings near together */
+    let alive=n;
+    for(let i=0;i<n;i++){
+      const sx=sx0-dir*i*R(40,70),sy=H+90-i*R(10,40),ex=sx+dir*run*R(.92,1.08);
+      const P=[[sx,sy],[sx+dir*run*.3+wig*.6,sy-rise*.27],[sx+dir*run*.7-wig*.6,sy-rise*.68],[ex,-150]];
+      const b=mk();
+      birds.push({el:b.el,o:b.o,s:state({ph:ph+i*R(.1,.35),freq}),P,dir,dur:dur*R(.95,1.05),t0:now+delayMs+i*R(350,650),sc:base*(1-i*.1),seed:R(0,9),
+        done(){alive--;if(alive===0)setTimeout(()=>flock(0),R(600,2800))}});
+    }
+  }
+
+  let last=performance.now();
+  function frame(now){
+    const dt=Math.min(.05,(now-last)/1000);last=now;
+    free.forEach(f=>{step(f.s,now,dt);pose(f.o,f.s)});
+    birds=birds.filter(b=>{
+      const t=(now-b.t0)/b.dur;
+      if(t<0)return true;
+      if(t>=1){b.el.remove();b.done();return false;}
+      const tt=t*.75+.25*t*t*(3-2*t);
+      const[x,y]=bez(b.P,tt),[vx,vy]=dbz(b.P,tt);
+      let a=Math.atan2(vy,vx)*180/PI+1.8*Math.sin(now/760+b.seed);
+      if(b.dir<0){a-=180;if(a<-180)a+=360}
+      /* lean into the turn: the wing on the inside of the curve drops */
+      const[vx2,vy2]=dbz(b.P,Math.min(1,tt+.05));
+      const turn=Math.atan2(vx*vy2-vy*vx2,vx*vx2+vy*vy2);
+      const bank=cl(-turn*7*b.dir,-.85,.85);
+      b.s.bank+=(bank-b.s.bank)*(1-Math.exp(-dt*2.2));
+      const sc=b.sc*(1-.5*tt);
+      b.el.style.opacity=Math.min(1,t/.07,(1-t)/.18)*.95;
+      b.el.style.transform=`translate3d(${x-60}px,${y-34}px,0) rotate(${a}deg) scale(${b.dir*sc},${sc})`;
+      step(b.s,now,dt);pose(b.o,b.s);
+      return true;
+    });
+    requestAnimationFrame(frame);
+  }
+  flock(300);flock(5200);flock(10500);
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
